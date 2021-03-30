@@ -7,13 +7,13 @@ sap.ui.define(
   function (BaseController, JSONModel, ResourceModel) {
     "use strict";
 
-    var oData = sap.ui.getCore().getModel().getData();
-    console.log(oData);
-
     return BaseController.extend(
       "sap.ui.demo.nav.controller.employee.EmployeeList",
       {
         onInit: function () {
+          var oData = sap.ui.getCore().getModel().getData();
+          console.log(oData);
+
           var model = new sap.ui.model.json.JSONModel();
           model.setData(oData);
           this.getView().setModel(model);
