@@ -1,0 +1,57 @@
+<!-- <mvc:View controllerName="sap.ui.demo.nav.controller.Home" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+		<content>
+			<Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+			<Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
+			<Button id="employeeOverviewBtn" text="{i18n>ShowEmployeeOverview}" press=".onNavToEmployeeOverview" class="sapUiTinyMarginEnd"/>
+		</content>
+	</Page>
+</mvc:View> -->
+<mvc:View controllerName="sap.ui.demo.nav.controller.Home"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m" height="100%">
+
+	<m:Page id="view" showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+		<m:content>
+			<Table id="table1" rows="{/ProductCollection}" selectionMode="Single" visibleRowCount="7" ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:ToolbarSpacer/>
+						<!-- <m:Button icon="sap-icon://activities" tooltip="show indices of selected items" press="getSelectedIndices"/> -->
+						<!-- next button -->
+						<m:Button text="Next" press="getSelectedIndices" icon="sap-icon://open-command-field" type="Success" iconFirst="false" ariaLabelledBy="actionButtonLabel"/>
+					</m:OverflowToolbar>
+				</extension>
+
+				<columns>
+					<!-- isim -->
+					<Column width="11rem">
+						<m:Label text="Name" />
+						<template>
+							<m:Text text="{Name}" wrapping="false" />
+						</template>
+					</Column>
+					<!-- soyisim -->
+					<Column width="11rem">
+						<m:Label text="Surname" />
+						<template>
+							<m:Text text="{ProductId}" />
+						</template>
+					</Column>
+					<!-- soyisim -->
+					<Column width="6rem" hAlign="End">
+						<m:Label text="Quantity" />
+						<template>
+							<m:Input type="Number" value="{Quantity}" placeholder="Enter a number" />
+						</template>
+					</Column>
+				</columns>
+			</Table>
+
+		</m:content>
+	</m:Page>
+
+</mvc:View>
