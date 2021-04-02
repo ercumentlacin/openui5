@@ -50,6 +50,10 @@ sap.ui.define(
         };
         var oModel = new JSONModel(oData);
         sap.ui.getCore().setModel(oModel);
+        // test yapıyorum
+        this.getOwnerComponent()
+          .getModel("myModel")
+          .setProperty("employeelist", oModel);
         // debugger;
         this.getRouter().navTo("employeeList");
       },

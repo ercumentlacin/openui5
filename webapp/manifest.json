@@ -56,6 +56,9 @@
           "fallbackLocale": ""
         }
       },
+      "myModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
       "": {
         "dataSource": "employeeRemote"
       }
